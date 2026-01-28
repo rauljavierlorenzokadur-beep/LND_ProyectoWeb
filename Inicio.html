@@ -101,12 +101,34 @@
             align-items: center;
             color: white;
             text-align: center;
+
         }
 
         .contenido img {
             width: 10%;
             margin-bottom: 2%;
+            animation: glow 3s infinite;
+
         }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 5px #ffffff;
+            }
+
+            50% {
+                box-shadow: 0 0 20px #ffffff;
+            }
+
+            100% {
+                box-shadow: 0 0 5px #ffffff;
+            }
+        }
+
+
+
+
+
 
         .contenido h1 {
             font-size: 3vw;
@@ -317,7 +339,7 @@
     <section>
         <hr>
         <h2 class="titulohis">Historia de los Perfumes</h2>
-        
+
         <article class="cards">
             <h3>Antigüedad</h3>
 
