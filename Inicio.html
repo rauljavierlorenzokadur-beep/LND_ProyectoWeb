@@ -14,39 +14,32 @@
             box-sizing: border-box;
         }
 
-        @font-face {
-            font-family: 'SpecialGothicExpandedOne-Regular';
-            src: url('../PROYECTO/fonts/SpecialGothicExpandedOne-Regular.ttf');
-            font-family: 'Anton-Regular';
-            src: url("../PROYECTO/fonts/Anton-Regular.ttf");
-            font-family: 'Bungee-Regular';
-            src: url("../PROYECTO/fonts/Bungee-Regular.ttf");
-        }
-
         body {
             background-color: #5a5959;
+            font-family: Arial, Helvetica, sans-serif;
         }
-
 
         header {
             background-color: #000;
             padding: 2%;
             display: flex;
             align-items: center;
-            font-family: 'SpecialGothicExpandedOne-Regular', sans-serif;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+
         }
 
         header img {
             width: 6%;
-            height: auto;
         }
 
         ul {
             list-style: none;
             margin-left: auto;
             display: flex;
-            justify-content: flex-end;
             width: 60%;
+            justify-content: flex-end;
         }
 
         li {
@@ -55,40 +48,33 @@
             font-weight: bold;
             color: white;
             cursor: pointer;
+            transition: transform 0.3s ease, text-shadow 0.3s ease;
         }
-
-
 
         li:hover {
-            text-shadow: 0 0 8px #f2f4f4, 0 0 15px #fafdfd;
+            transform: scale(1.1);
+            text-shadow: 0 0 10px #fff;
         }
-
 
         .contenedor_video {
             position: relative;
             width: 100%;
             height: 70vh;
             overflow: hidden;
-            background-color: #000;
         }
 
         .contenedor_video video {
             position: absolute;
-            top: 50%;
-            left: 50%;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transform: translate(-50%, -50%);
         }
 
         .overlay {
             position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.5);
         }
 
         .contenido {
@@ -101,14 +87,120 @@
             align-items: center;
             color: white;
             text-align: center;
-
         }
 
         .contenido img {
             width: 10%;
             margin-bottom: 2%;
-            animation: glow 3s infinite;
+        }
 
+        .logocentral {
+            animation: glow 3s infinite;
+            border-radius: 10%;
+        }
+
+        .contenido h1 {
+            font-size: 3vw;
+            margin-bottom: 1%;
+        }
+
+        .contenido p {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+
+        .info-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 5%;
+            margin: 8% auto;
+            width: 90%;
+            flex-wrap: wrap;
+        }
+
+        .info-left img {
+            order: 0;
+        }
+
+        .info-left .text {
+            order: 1;
+        }
+
+        .info-right img {
+            order: 1;
+        }
+
+        .info-right .text {
+            order: 0;
+        }
+
+        .info-section img {
+            width: 35%;
+            border-radius: 10px;
+            transition: transform 0.4s ease;
+        }
+
+
+        .info-section img:hover {
+            transform: scale(1.05);
+        }
+
+        .info-section .text {
+            flex: 1;
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        hr {
+            height: 2%;
+            background-color: #000;
+            border: none;
+            margin: 5% 0;
+        }
+
+        .titulohis {
+            text-align: center;
+            color: white;
+            font-size: 2.2vw;
+            margin-bottom: 4%;
+            text-shadow: 0 0 1%;
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+            gap: 3%;
+            width: 90%;
+            margin: 0 auto 6% auto;
+        }
+
+        .cards {
+            background-color: #bfbfbf;
+            border-radius: 1%;
+            padding: 2%;
+            color: #000;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .cards:hover {
+            transform: translateY(-2%) scale(1.05);
+            box-shadow: 0 2% 4% rgba(0, 0, 0, 0.4);
+        }
+
+        .cards h3 {
+            margin-bottom: 1%;
+            border-bottom: 0.2% solid #000;
+            padding-bottom: 0.5%;
+        }
+
+
+        footer {
+            background-color: #000;
+            color: white;
+            text-align: center;
+            padding: 1%;
+            font-size: 0.9rem;
         }
 
         @keyframes glow {
@@ -125,260 +217,204 @@
             }
         }
 
-
-
-
-
-
-        .contenido h1 {
-            font-size: 3vw;
-            margin-bottom: 1%;
-        }
-
-        .contenido p {
-            font-size: 1.2rem;
-            opacity: 0.8;
-        }
-
-
-        .info {
-            background-color: #5a5959;
-            margin-top: 8%;
-            margin-bottom: 8%;
-        }
-
-        .info p {
-            padding-left: 55%;
-            font-size: 110%;
-            color: white;
-        }
-
-        .info img {
-            width: 27%;
-            position: absolute;
-            left: 12%;
-            top: 100%;
-        }
-
-        /* TABLET */
-        @media (max-width: 64em) {
-            header img {
-                width: 8%;
-            }
-
-            ul {
-                justify-content: center;
-                width: 100%;
-                margin-top: 2%;
-            }
-
-            li {
-                margin: 0 3%;
-                font-size: 1rem;
-            }
-        }
-
-        .contenido h1 {
-            font-size: 4vw;
-        }
-
-        .info p {
-            max-width: 85%;
-        }
-
-
-
-        /* MÓVIL */
-        @media (max-width: 48em) {
+        @media (max-width: 768px) {
             header {
                 flex-direction: column;
-                text-align: center;
             }
 
             ul {
-                flex-direction: column;
-                align-items: center;
                 width: 100%;
-                margin-top: 3%;
-            }
-
-            li {
-                margin: 2% 0;
-            }
-
-
-            .contenedor_video {
-                height: 50vh;
-            }
-
-            .contenido img {
-                width: 18%;
+                justify-content: center;
+                margin-top: 2%;
             }
 
             .contenido h1 {
                 font-size: 6vw;
             }
 
-            .contenido p {
-                font-size: 1rem;
+            .info-section {
+                flex-direction: column;
+                text-align: center;
             }
 
-            .info p {
-                font-size: 1rem;
-                max-width: 95%;
-            }
-        }
-
-        /* MÓVIL PEQUEÑO */
-        @media (max-width: 30em) {
-            .contenido h1 {
-                font-size: 7vw;
+            .info-section img {
+                width: 60%;
+                margin-bottom: 2%;
             }
 
-            .contenido p {
-                font-size: 0.9rem;
+            .info-section .text {
+                padding: 0 2%;
             }
         }
 
-        footer {
-            background-color: #000;
-            color: white;
+        .tabla {
+            width: 80%;
+            margin: 0 auto 6% auto;
+            border-collapse: collapse;
+            border: 2px solid #000;
+            animation: aparecerTabla 1s ease;
+        }
+
+        tr,
+        th {
+            border: 3px solid #e5d202;
+            padding: 10px;
             text-align: center;
-            padding: 1%;
-            font-size: 0.9rem;
+            color: #ffffff;
+            background-color: #020202;
+
         }
 
-        .info2 {
-            background-color: #5a5959;
-            margin-top: 8%;
-            margin-bottom: 8%;
-        }
+        @keyframes aparecerTabla {
+            from {
+                opacity: 0;
+                transform: translateY(5%);
+            }
 
-        .info2 p {
-            margin-top: 12%;
-            padding-left: 12%;
-            font-size: 110%;
-            color: white;
-        }
-
-        .info2 img {
-            width: 14%;
-            position: absolute;
-            left: 63%;
-            top: 145%;
-        }
-
-        hr {
-            border: 10%;
-            border-color: #000;
-            height: 20px;
-            background-color: #000;
-            margin: 40px 0;
-        }
-
-        .titulohis {
-            text-align: center;
-            color: white;
-        }
-
-        .cards {
-            background-color: #bfbfbf;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 20px auto;
-            width: 60%;
-            color: #000;
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 
 <body>
+
     <header>
-
-        <img src="img_y_vid/logo.png" alt="Logo AURAUL">
-
+        <img src="img_y_vid/logo.png" alt="Logo">
         <ul>
             <li>Inicio</li>
             <li>Historia</li>
             <li>Perfumes</li>
-            <li>Galeria</li>
+            <li>Galería</li>
             <li>Contacto</li>
         </ul>
-
     </header>
 
     <section class="contenedor_video">
         <video autoplay muted loop>
             <source src="img_y_vid/humo.mp4" type="video/mp4">
         </video>
-
         <div class="overlay"></div>
-
         <div class="contenido">
-            <img src="img_y_vid/logo.png" alt="Imagen central">
+            <img src="img_y_vid/logo.png" alt="Logo central" class="logocentral">
             <h1>LA ESENCIA DEL PERFUME</h1>
             <p>Una historia que se huele</p>
         </div>
     </section>
-    <section class="info">
-        <img src="img_y_vid/variedad.webp" alt="perfumes variados">
-        <p>Historia de los Perfumes es una web dedicada a mostrar la evolución del perfume desde sus orígenes
-            en la antigüedad hasta las fragancias actuales más conocidas. A través de perfumes históricos y
-            modernos, curiosidades e imágenes, la página busca informar de forma clara y visual sobre la
-            importancia del perfume en la cultura y la moda, utilizando un diseño moderno y adaptable a cualquier
-            dispositivo.</p>
-    </section>
-    <section class="info2">
-        <img src="img_y_vid/xerjoff.jpg" alt="perfumes variados 2">
-        <p>A lo largo de la historia, el perfume ha sido mucho más <br> que un simple aroma: ha representado identidad,
-            estatus <br> y emoción. En esta web se explora cómo las fragancias han <br> evolucionado junto a la
-            sociedad,
-            adaptándose a cada época <br> y reflejando tendencias, gustos y formas de expresión personal, <br> desde las
-            civilizaciones antiguas hasta la perfumería contemporánea.</p>
-    </section>
-    <section>
-        <hr>
-        <h2 class="titulohis">Historia de los Perfumes</h2>
 
-        <article class="cards">
+    <section class="info-section info-left">
+        <img src="img_y_vid/variedad.webp" alt="Perfumes" class="zoom">
+        <div class="text">
+            <p>
+                Historia de los Perfumes es una web dedicada a mostrar la evolución
+                del perfume desde sus orígenes en la antigüedad hasta las fragancias
+                actuales más conocidas. A través de perfumes históricos y modernos,
+                curiosidades e imágenes, la página busca informar de forma clara y
+                visual sobre la importancia del perfume en la cultura y la moda,
+                utilizando un diseño moderno y adaptable a cualquier dispositivo.
+            </p>
+        </div>
+    </section>
+
+    <section class="info-section info-right">
+        <img src="img_y_vid/xerjoff.jpg" alt="Perfume lujo" class="zoom">
+        <div class="text">
+            <p>
+                A lo largo de la historia, el perfume ha sido mucho más
+                que un simple aroma: ha representado identidad, estatus
+                y emoción. En esta web se explora cómo las fragancias han
+                evolucionado junto a la sociedad, adaptándose a cada época
+                y reflejando tendencias, gustos y formas de expresión personal,
+                desde las civilizaciones antiguas hasta la perfumería contemporánea
+
+            </p>
+        </div>
+    </section>
+
+    <hr>
+
+    <h2 class="titulohis">Historia de los Perfumes</h2>
+
+    <div class="cards-container">
+        <article class="cards zoom">
             <h3>Antigüedad</h3>
-
-            <p>El uso del perfume se remonta a las primeras civilizaciones como Egipto,
-                Mesopotamia y Grecia. En esta época, los perfumes se elaboraban a
-                partir de resinas, flores y aceites naturales, y se utilizaban
-                principalmente en rituales religiosos, ceremonias y embalsamamientos.
-                El aroma tenía un valor espiritual y simbólico, ya que se creía que
-                conectaba a los dioses con los humanos.</p>
+            <p>Los perfumes nacen en Egipto, Grecia y Mesopotamia con fines rituales y espirituales.</p>
         </article>
-        <article class="cards">
+
+        <article class="cards zoom">
             <h3>Edad Media</h3>
-
-            <p>Durante la Edad Media, el perfume empezó a usarse también con fines medicinales
-                y de higiene. En un contexto donde el agua no se utilizaba con frecuencia, las
-                fragancias ayudaban a disimular los malos olores y a proteger contra enfermedades.
-                En esta etapa se introdujo el alcohol como base para los perfumes, lo que permitió
-                crear aromas más duraderos y complejos.</p>
+            <p>Se usan con fines medicinales y de higiene, introduciendo el alcohol.</p>
         </article>
-        <article class="cards">
+
+        <article class="cards zoom">
             <h3>Siglos XVIII y XIX</h3>
-
-            <p> Con el paso del tiempo, el perfume dejó de ser solo un producto funcional y se
-                convirtió en un símbolo de lujo y estatus social. En Francia, especialmente en
-                la ciudad de Grasse, nació la perfumería moderna. Se comenzaron a crear fragancias
-                más elaboradas y se popularizó el uso del perfume entre la alta sociedad europea.</p>
+            <p>El perfume se convierte en símbolo de lujo y nace la perfumería moderna.</p>
         </article>
-        <article class="cards">
-            <h3>Siglo XX y actualidad</h3>
 
-            <p>En el siglo XX, el perfume se convirtió en un producto accesible para todo el público
-                gracias a la industrialización. Surgieron grandes marcas y perfumes icónicos que marcaron
-                época. Hoy en día, la perfumería combina tradición e innovación, dando lugar a fragancias
-                modernas, de autor y de diseño, que forman parte de la identidad personal de cada individuo.</p>
+        <article class="cards zoom">
+            <h3>Actualidad</h3>
+            <p>La perfumería combina tradición, diseño e innovación.</p>
         </article>
+    </div>
+
+    <section>
+        <h2 class="titulohis">Perfumes</h2>
+        <table class="tabla">
+
+            <thead>
+                <tr>
+                    <th>Marca</th>
+                    <th>Perfume</th>
+                    <th>Año</th>
+                    <th>Tipo</th>
+                    <th>Notas principales</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Jean Paul Gaultier</td>
+                    <td>Le Male Elixir</td>
+                    <td>2023</td>
+                    <td>Masculino</td>
+                    <td>Vainilla, Lavanda</td>
+                </tr>
+
+                <tr>
+                    <td>Dior</td>
+                    <td>Sauvage</td>
+                    <td>2015</td>
+                    <td>Masculino</td>
+                    <td>Bergamota, Pimienta</td>
+                </tr>
+
+                <tr>
+                    <td>Chanel</td>
+                    <td>Nº5</td>
+                    <td>1921</td>
+                    <td>Femenino</td>
+                    <td>Flores, Aldehídos</td>
+                </tr>
+
+                <tr>
+                    <td>Xerjoff</td>
+                    <td>Erba Pura</td>
+                    <td>2019</td>
+                    <td>Unisex</td>
+                    <td>Frutas, Almizcle</td>
+                </tr>
+            </tbody>
+
+        </table>
+
     </section>
+
     <footer>
         <p>&copy; 2026 Historia de los Perfumes. Todos los derechos reservados.</p>
     </footer>
+
 </body>
 
 </html>
