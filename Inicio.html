@@ -7,6 +7,8 @@
     <title>Historia de los Perfumes</title>
     <link rel="icon" href="img_y_vid/logo.png" type="image/png">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 
 </head>
 
@@ -50,34 +52,61 @@
         </div>
     </div>
 
-    <section class="info-section info-left">
-        <img src="img_y_vid/variedad.webp" alt="Perfumes" class="zoom">
-        <div class="text">
+    <section class="historia-premium">
+
+    <div class="historia-card">
+
+        <div class="historia-img">
+            <img src="img_y_vid/variedad.webp" alt="Perfumes">
+        </div>
+
+        <div class="historia-texto">
+            <h2>Historia de los Perfumes</h2>
             <p>
                 Historia de los Perfumes es una web dedicada a mostrar la evolución
                 del perfume desde sus orígenes en la antigüedad hasta las fragancias
                 actuales más conocidas. A través de perfumes históricos y modernos,
-                curiosidades e imágenes, la página busca informar de forma clara y
-                visual sobre la importancia del perfume en la cultura y la moda,
-                utilizando un diseño moderno y adaptable a cualquier dispositivo.
+                curiosidades e imágenes, la página informa de forma clara y visual
+                sobre la importancia del perfume en la cultura y la moda.
             </p>
-        </div>
-    </section>
 
-    <section class="info-section info-right">
-        <img src="img_y_vid/xerjoff.jpg" alt="Perfume lujo" class="zoom">
-        <div class="text">
+            <div class="historia-line"></div>
+
+            <span class="firma">Perfumería · Historia · Cultura</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="historia-premium">
+
+    <div class="historia-card reverse">
+
+        <div class="historia-img">
+            <img src="img_y_vid/xerjoff.jpg" alt="Perfume lujo">
+        </div>
+
+        <div class="historia-texto">
+            <h2>Más que un aroma</h2>
             <p>
-                A lo largo de la historia, el perfume ha sido mucho más
-                que un simple aroma: ha representado identidad, estatus
-                y emoción. En esta web se explora cómo las fragancias han
-                evolucionado junto a la sociedad, adaptándose a cada época
-                y reflejando tendencias, gustos y formas de expresión personal,
-                desde las civilizaciones antiguas hasta la perfumería contemporánea
-
+                A lo largo de la historia, el perfume ha sido mucho más que un simple
+                aroma: ha representado identidad, estatus y emoción. Las fragancias han
+                evolucionado junto a la sociedad, reflejando tendencias, gustos y
+                formas de expresión personal, desde las civilizaciones antiguas hasta
+                la perfumería contemporánea.
             </p>
+
+            <div class="historia-line"></div>
+
+            <span class="firma">Identidad · Emoción · Estilo</span>
         </div>
-    </section>
+
+    </div>
+
+</section>
+
 
     <hr>
 
@@ -248,9 +277,75 @@
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 Historia de los Perfumes. Todos los derechos reservados.</p>
-    </footer>
+    <footer class="footer">
+    <div class="footer-container">
+
+        <!-- LOGO + REDES -->
+        <div class="footer-col logo-col">
+            <h2 class="footer-logo">AURAUL/</h2>
+
+            <div class="social-icons">
+                <a href="#" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" aria-label="TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- SUPPORT -->
+        <div class="footer-col">
+            <h3>SUPPORT</h3>
+            <ul>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Shipping Policy</a></li>
+                <li><a href="#">Return & Exchange Policy</a></li>
+            </ul>
+        </div>
+
+        <!-- BRAND -->
+        <div class="footer-col">
+            <h3>BRAND</h3>
+            <ul>
+                <li><a href="#">Stores</a></li>
+                <li><a href="#">Careers</a></li>
+            </ul>
+        </div>
+
+        <!-- LEGAL -->
+        <div class="footer-col">
+            <h3>LEGAL</h3>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Cookie Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Legal Notice</a></li>
+            </ul>
+        </div>
+
+        <!-- NEWSLETTER -->
+        <div class="footer-col newsletter">
+            <h3>PERFUME UPDATES</h3>
+            <p class="newsletter-text">
+                Pon tu email y te mandamos información de perfumes
+            </p>
+
+            <input type="email" placeholder="Tu e-mail">
+            <button>RECIBIR INFO</button>
+
+            <label class="terms">
+                <input type="checkbox">
+                Acepto los Términos y la Política de Privacidad
+            </label>
+        </div>
+
+    </div>
+</footer>
+
 
 </body>
 
@@ -259,6 +354,18 @@
     const track = document.getElementById("bannerTrack");
     banner.addEventListener("mouseleave", () => {
         track.style.animationPlayState = "running";
+    });
+</script>
+
+<script>
+    const header = document.querySelector("header");
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 80) {
+            header.classList.add("scrolled");
+        } else {
+            header.classList.remove("scrolled");
+        }
     });
 </script>
 
